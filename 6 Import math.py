@@ -39,10 +39,51 @@ import math
 # random.shuffle(chamada)
 # print(f'Ordem aleatória: {chamada}')
 
-'''IMPORTANDO MÚSICA:
+'''EXERCÍCIO 21: IMPORTANDO MÚSICA:
 import pygame
 pygame.init()
 pygame.mixer.music.load('arquivo.mp3')
 pygame.mixer.music.play()'''
 
+'''EXERCÍCIO 22: Crie um programa que leia o nome completo de uma pessoa e mostre:
+    – O nome com todas as letras maiúsculas e minúsculas.
+    – Quantas letras ao todo (sem considerar espaços).
+    – Quantas letras tem o primeiro nome.
+'''
+# name = str(input("Digite seu nome: "))
+# nameMin = name.lower()
+# nameMax = name.upper()
+# quantLetras = len(name.replace(" ", ""))
+# #Troca o espaço (representado por " ") por um não espaço "", usado na função replace()
+# firstName = len(name.split()[0])
 
+# print(name)
+# print(f"Seu nome todo em letras minúculas: {nameMin}.\nSeu nome em letras maiúsculas: {nameMax}.\nSeu nome {quantLetras} letras.\nSeu primeiro nome tem {firstName} letras.")
+
+'''EXERCÍCIO 23: Faça um programa que leia um número de 0 a 9999 e mostre na tela cada um dos dígitos separados.'''
+
+# numero = int(input("Digite um número de 0 a 9999: "))
+# unidade = numero % 10    # Lembarndo que % --> devolve o resto da divisão
+# dezena = (numero // 10) % 10 # --> divide o num por 10, pega o resto, e o divide por 10, pegando o resto da divisão e atribuindo ele a variável dezena
+# centena = (numero // 100) % 10 # --> Mesma lógica, porém com 100 já que busco a centena
+# milhar = (numero // 1000) % 10
+
+# print(f"Unidade: {unidade}")
+# print(f"Dezena: {dezena}")
+# print(f"Centena: {centena}")
+# print(f"Milhar: {milhar}")
+
+# Se colocar o número 1234, e pedir a centena, ele dividirá por 100, o que dará 12.34, consideremos 12, então subsquente,emte dividimos por 10, daria um resultado de divisão de 1 com resto 2, quando usamos o "%" estamos pegando justamente este resto. 
+
+# Caso o número fosse um que não possui milhar, como 123, ele irá dividir por 1000, o que daria 0,1234, consideremos 0, já que estamos mexendo com inteiros neste código. 0 dividido por qualquer número é 0, o resultado da visão será 0 e seu resto também. 
+
+"""EXERCÍCIO 24: Crie um programa que leia o nome de uma cidade diga se ela começa ou não com o nome “SANTO”"""
+# cidade = str(input("Digite o nome da cidade: ")).strip()
+# print(cidade[0:5].capitalize() == 'Santo') 
+
+# Estou printando a afirmação de se as primeiras cinco letras da cidade digitada são as mesmas de Santo, ou seja, usando o ==, estou dizendo que este prnt será um boolean, retornando True ou False.
+
+
+"""EXRCÍCIO 25: Crie um programa que leia o nome de uma pessoa e diga se ela tem “SILVA” no nome. """
+fulano = str(input("Qual o seu nome? ")).strip()
+print(f"Seu nome possui Silva? {"Silva" in fulano.title()}")
